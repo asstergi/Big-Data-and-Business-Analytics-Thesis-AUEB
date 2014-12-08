@@ -284,9 +284,6 @@ if __name__ == '__main__':
     
     print("build tfidf")
     train_X, test_X = build_tfidf(train_text, test_text)
-    
-    train_X = csr_matrix(train_X)
-    test_X = csr_matrix(test_X)
 
     print("calculating Information Gain")
     InfGain = IG(train_X, train_y)
@@ -299,6 +296,9 @@ if __name__ == '__main__':
     
     print("calculating SVD for Subspace-Sampling")
     U, S, V = np.linalg.svd(train_X.todense(),full_matrices =False)    
+
+    train_X = csr_matrix(train_X)
+    test_X = csr_matrix(test_X)
 
     print("training")
        
