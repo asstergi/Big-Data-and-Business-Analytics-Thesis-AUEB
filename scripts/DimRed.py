@@ -250,21 +250,11 @@ if __name__ == '__main__':
         trainData = trainData.parse('Sheet1', header=None)
         testData = testData.parse('Sheet1', header=None)
         
-        train_text = trainData.iloc[:,1]
-        test_text = testData.iloc[:,1]
-        train_label = trainData.iloc[:,0]
-        test_label = testData.iloc[:,0]
-        
     elif dataset == "reuters8":
         trainData = pd.ExcelFile('Reuters-21578 R8 train.xlsx')
         testData = pd.ExcelFile('Reuters-21578 R8 test.xlsx')
         trainData = trainData.parse('Sheet1', header=None)
         testData = testData.parse('Sheet1', header=None)
-        
-        train_text = trainData.iloc[:,1]
-        test_text = testData.iloc[:,1]
-        train_label = trainData.iloc[:,0]
-        test_label = testData.iloc[:,0]
         
     elif dataset == "newsgroup":
         trainData = pd.ExcelFile('newsgroup train.xlsx')
@@ -272,10 +262,11 @@ if __name__ == '__main__':
         trainData = trainData.parse('Sheet1', header=None)
         testData = testData.parse('Sheet1', header=None)
         
-        train_text = trainData.iloc[:,1]
-        test_text = testData.iloc[:,1]
-        train_label = trainData.iloc[:,0]
-        test_label = testData.iloc[:,0]
+
+    train_text = trainData.iloc[:,1]
+    test_text = testData.iloc[:,1]
+    train_label = trainData.iloc[:,0]
+    test_label = testData.iloc[:,0]
             
     print('encode labels')
     encoder = LabelEncoder()
