@@ -14,7 +14,7 @@ from sklearn import svm
 from sklearn.lda import LDA
 from nltk import stem
 from nltk.corpus import stopwords
-from SubspaceSampling import WBS, SS
+from SamplingBasedSelection import WBS, SS
 
 class StemTokenizer(object):
     """
