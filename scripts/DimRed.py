@@ -262,7 +262,6 @@ if __name__ == '__main__':
         trainData = trainData.parse('Sheet1', header=None)
         testData = testData.parse('Sheet1', header=None)
         
-
     train_text = trainData.iloc[:,1]
     test_text = testData.iloc[:,1]
     train_label = trainData.iloc[:,0]
